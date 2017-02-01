@@ -106,6 +106,7 @@ app.controller('DetailsCtrl',function($scope, $rootScope, $state, $stateParams, 
     var id = parseInt($stateParams.id, 10);
     $scope.id = id;
     $scope.unit = jQuery.extend({},window.units[id - 1]);
+    console.log($scope.unit);
     $scope.hybrid = $scope.unit.class && $scope.unit.class.constructor == Array;
     $scope.details = window.details[id];
     $scope.cooldown = window.cooldowns[id - 1];
@@ -370,7 +371,7 @@ app.controller('ColumnsCtrl',function($scope, $rootScope, $state, $stateParams, 
 
     $scope.columns = { 'HP/ATK': false, 'HP/RCV': false, 'ATK/RCV': false, 'ATK/CMB': false,
         'CMB': false, 'ATK/cost': false, 'HP/cost': false, 'Minimum cooldown': false,
-        'Initial cooldown': false,'MAX EXP': false };
+        'Initial cooldown': false,'MAX EXP': false, 'Ray Points': false };
 
     var additionalColumns = $storage.get('charColumns', [ ]);
 

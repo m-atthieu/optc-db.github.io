@@ -32,6 +32,7 @@
                 atk: element[15] ? element[15][1] : 0,
                 rcv: element[15] ? element[15][2] : 0
             },
+            ray_points: element[16] ? element[16]: -1,
             number: n
         };
         if (element.indexOf(null) != -1)

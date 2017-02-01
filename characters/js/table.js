@@ -251,6 +251,8 @@ angular.module('optc') .run(function($rootScope, $timeout, $storage, MATCHER_IDS
                 else if (c == 'Minimum cooldown' && d.constructor == Array) temp = d[1];
                 else if (c == 'Initial cooldown') temp = (d.constructor == Array ? d[0] : d);
                 else temp = 'Unknown';
+            } else if(c == 'Ray Points'){
+                temp = x.ray_points
             }
             if (temp && temp.constructor != String && !isNaN(temp) && !isFinite(temp)) temp = '&#8734;';
             if (temp && temp.constructor != String && isNaN(temp)) temp = 0;

@@ -43,6 +43,7 @@
                                     <th>Type</th>
                                     <th>Stars</th>
                                     <th>Cost</th>
+                                    <th>Ray Points</th>
                                 </tr>
                                 <tr>
                                     <td ng-if="!hybrid">{{unit.class}}</td>
@@ -53,12 +54,13 @@
                                     <td ng-if="compare" comparison="positive">{{unit.stars - compare.stars}}</td>
                                     <td ng-if="!compare">{{unit.cost}}</td>
                                     <td ng-if="compare" comparison="negative">{{unit.cost - compare.cost}}</td>
+                                    <td>{{ unit.ray_points }}</td>
                                 </tr>
                                 <tr>
                                     <th>Combo</th>
                                     <th>Slots</th>
                                     <th>Max Level</th>
-                                    <th colspan="{{hybrid ? 2 : 1}}">EXP to Max</th>
+                                    <th colspan="{{hybrid ? 3 : 2}}">EXP to Max</th>
                                 </tr>
                                 <tr>
                                     <td ng-if="!compare">{{unit.combo}}</td>
@@ -66,8 +68,8 @@
                                     <td ng-if="!compare">{{unit.preview ? '' : unit.slots}}</td>
                                     <td ng-if="compare" comparison="positive">{{unit.slots - compare.slots}}</td>
                                     <td>{{unit.maxLevel}}</td>
-                                    <td ng-if="!compare" colspan="{{hybrid ? 2 : 1}}">{{unit.maxEXP | number}}</td>
-                                    <td ng-if="compare" colspan="{{hybrid ? 2 : 1}}" comparison="negative">{{unit.maxEXP - compare.maxEXP | number}}</td>
+                                    <td ng-if="!compare" colspan="{{hybrid ? 3 : 2}}">{{unit.maxEXP | number}}</td>
+                                    <td ng-if="compare" colspan="{{hybrid ? 3 : 2}}" comparison="negative">{{unit.maxEXP - compare.maxEXP | number}}</td>
                                 </tr>
                             </tbody>
                         </table>
